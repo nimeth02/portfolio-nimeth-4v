@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Github, Linkedin, Facebook, Download, Sparkles, Code, Brain } from "lucide-react"
+import { Github, Linkedin, Facebook, Download, Sparkles, Code, Brain, BookOpen } from "lucide-react"
 
 export function Hero() {
   return (
@@ -62,20 +62,22 @@ export function Hero() {
               </h1>
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
                 <span className="glass-card px-4 py-2 rounded-full text-sm font-semibold text-primary">
-                  Backend Developer
+                  Intern Software Engineer
                 </span>
                 <span className="glass-card px-4 py-2 rounded-full text-sm font-semibold text-secondary">
-                  ML Engineer
+                  AI Enthusiest
                 </span>
               </div>
             </div>
 
             <Card className="glass-card p-6 sm:p-8 mb-8 border-0 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
-                I am an undergraduate from the Faculty of Information Technology at the University of Moratuwa, focusing
-                on machine learning and backend development. I am eager to apply my skills through a Software
-                Engineering Internship, bringing enthusiasm for continuous learning, adaptability, and collaboration to
-                tackle complex challenges and contribute to innovative solutions.
+                I  am a final year undergraduate student at the Faculty of Information
+                Technology, University of Moratuwa, specializing in machine learning and
+                artificial intelligence. I am on the verge of completing my internship and
+                am now seeking an Associate AI Engineer role to apply my full-stack and
+                AI skills to solve complex challenges and contribute to innovative IT
+                solutions.
               </p>
             </Card>
 
@@ -83,37 +85,66 @@ export function Hero() {
               className="flex justify-center lg:justify-start gap-4 mb-8 animate-fade-in-up"
               style={{ animationDelay: "0.6s" }}
             >
-              <Button
-                variant="outline"
-                size="icon"
-                className="glass-card hover:glass border-0 hover:text-accent hover:scale-110 transition-all duration-300 bg-transparent"
+              <a
+                href="https://www.linkedin.com/in/nimeth-nimdinu-231396213"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
-                <Facebook size={20} />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="glass-card hover:glass border-0 hover:text-accent hover:scale-110 transition-all duration-300 bg-transparent"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="glass-card hover:glass border-0 hover:text-accent hover:scale-110 transition-all duration-300 bg-transparent"
+                >
+                  <Linkedin size={20} />
+                </Button>
+              </a>
+              <a
+                href="https://github.com/nimeth02"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
               >
-                <Linkedin size={20} />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="glass-card hover:glass border-0 hover:text-accent hover:scale-110 transition-all duration-300 bg-transparent"
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="glass-card hover:glass border-0 hover:text-accent hover:scale-110 transition-all duration-300 bg-transparent"
+                >
+                  <Github size={20} />
+                </Button>
+              </a>
+              <a
+                href="https://medium.com/@20011002nimeth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Medium"
               >
-                <Github size={20} />
-              </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="glass-card hover:glass border-0 hover:text-accent hover:scale-110 transition-all duration-300 bg-transparent"
+                >
+                  <BookOpen size={20} />
+                </Button>
+              </a>
             </div>
 
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:to-primary text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
-              style={{ animationDelay: "0.9s" }}
+            <a
+              href="/Nimeth-AI.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download CV"
             >
-              <Download className="mr-2" size={20} />
-              Get In Touch
-            </Button>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:to-primary text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                style={{ animationDelay: "0.9s" }}
+              >
+                <Download className="mr-2" size={20} />
+                Get In Touch
+              </Button>
+            </a>
           </div>
         </div>
       </div>

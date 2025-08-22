@@ -6,60 +6,63 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 export function Projects() {
   const projects = [
     {
-      title: "Inventory Management System",
+      title: "Tea Farming Support Assistant",
       description:
-        "A comprehensive admin panel application for inventory management. Super admins manage user accounts, while admins oversee product management. Each manager works on a personalized dashboard for efficient task handling.",
-      image: "/modern-ecommerce-platform.png",
-      technologies: ["Frontend", "Next.js", "TypeScript", "Backend", "Node.js", "MongoDB"],
-      liveUrl: "#",
+        "AI-powered multi-agent assistant for tea farmers. Includes disease diagnosis via RAG, fertilizer recommendations using weather/land data, and FAQ help service. Integrated LLM-based query routing with LangChain and LangGraph.",
+      image: "/tea-farming-assistant.png",
+      technologies: [
+        "FastAPI",
+        "LangChain",
+        "LangGraph",
+        "Pinecone",
+        "Scikit-learn",
+        "Pandas",
+      ],
+      githubUrl: "https://github.com/nimeth02/Tea-support-assistant/tree/main/Chat_Bot"
+    },
+    {
+      title: "Studio Management System",
+      description:
+        "Comprehensive platform for studio operations with customer bookings, manager dashboard for POS, inventory, and events, plus a staff mobile app. Developed backend and frontend as group leader under Optimize Solutions mentorship.",
+      image: "/studio-management.png",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "MSSQL",
+        "Flutter",
+        "Socket.io",
+      ],
       githubUrl: "#",
     },
     {
-      title: "Account Manager",
+      title: "Tomato Disease Detector",
       description:
-        "Developing an account details manager for app allows users to organize their account information efficiently. Users can add, edit, and delete account details while also accessing details of any account.",
-      image: "/task-management-dashboard.png",
-      technologies: ["Frontend", "Next.js", "Backend", "Node.js", "MongoDB"],
-      liveUrl: "#",
+        "AI system for detecting crop diseases from tomato leaf images using computer vision and ML. Integrated TensorFlow models, Matplotlib visualization, FastAPI backend, and React.js frontend for real-time diagnosis.",
+      image: "/tomato-disease-detector.png",
+      technologies: [
+        "React.js",
+        "FastAPI",
+        "TensorFlow",
+        "Matplotlib",
+      ],
       githubUrl: "#",
     },
     {
-      title: "Booking Chat Application",
+      title: "Green Haven - E-commerce Platform",
       description:
-        "Real time chat application that allows users to chat individually and in groups with instant messaging. The application also incorporates personal and group conversations, offering a dynamic platform for both personal and group conversations.",
-      image: "/mobile-banking-app.png",
-      technologies: ["Frontend", "Next.js", "Backend", "Node.js", "Express.js", "MongoDB"],
-      liveUrl: "#",
+        "University group project for a plant shop with customer portal, admin dashboard, Stripe payment integration, and microservice-based performance optimization. Authentication via OAuth and Redis for session management.",
+      image: "/green-haven.png",
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Redis",
+        "gRPC",
+        "RabbitMQ",
+      ],
       githubUrl: "#",
     },
-    {
-      title: "Home Price Prediction Application",
-      description:
-        "Developing a home price prediction application that allows machine learning and data analytics to estimate home prices based on features such as the number of rooms and the location. Items are input through a user-friendly interface.",
-      image: "/ai-analytics-dashboard.png",
-      technologies: ["Frontend", "React.js", "Backend", "Flask", "Python", "Machine Learning"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Phone Price Prediction Application",
-      description:
-        "Creating an iPhone price prediction application for the Sri Lankan market, our app allows machine learning to estimate phone prices based on features such as the iPhone model, memory capacity, and color. Prices are input through a user-friendly interface.",
-      image: "/creative-portfolio-website.png",
-      technologies: ["Frontend", "React.js", "Backend", "Flask", "Python"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Event Managing Application",
-      description:
-        "Event Management Application simplifies event creation and management for organizers. It handles event planning and personal booking. The application uses comprehensive event management through a streamlined booking system and enhanced user experience.",
-      image: "/task-management-dashboard.png",
-      technologies: ["Frontend", "Backend", "Node.js", "Express.js", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ]
+  ];
+  
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
@@ -109,39 +112,41 @@ export function Projects() {
 
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                  {project.technologies.slice(0,5).map((tech, techIndex) => (
                     <Badge
                       key={techIndex}
                       variant="secondary"
-                      className="glass text-xs font-medium px-3 py-1 hover:bg-accent/20 transition-colors duration-300"
+                      className="glass text-xs font-medium px-3 py-1 hover:bg-accent/20 text-slate-500 "
                     >
                       {tech}
                     </Badge>
                   ))}
-                  {project.technologies.length > 4 && (
-                    <Badge variant="secondary" className="glass text-xs font-medium px-3 py-1">
+                  {project.technologies.length >5 && (
+                    <Badge variant="secondary" className="glass text-xs font-medium px-3 py-1 text-slate-500">
                       +{project.technologies.length - 4}
                     </Badge>
                   )}
                 </div>
 
                 <div className="flex gap-3">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 glass-card border-0 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 bg-transparent"
-                  >
-                    <ExternalLink size={16} className="mr-2" />
-                    Live Demo
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 glass-card border-0 hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-105 bg-transparent"
-                  >
-                    <Github size={16} className="mr-2" />
-                    Source
-                  </Button>
+                  {project.githubUrl && project.githubUrl !== "#" && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={project.title + " GitHub"}
+                      className="flex-1"
+                    >
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full glass-card border-0 text-slate-500 "
+                      >
+                        <Github size={16} className="mr-2" />
+                        Source
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>

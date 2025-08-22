@@ -31,17 +31,17 @@ export function Header() {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-pulse-glow">
+          <div className="text-2xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-pulse-glow rounded-2xl shadow-xl px-4 py-2   hover:scale-105 hover:shadow-2xl transition-all duration-300 backdrop-blur-md">
             Nimeth Nimdinu
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 rounded-xl bg-white/10 backdrop-blur-md px-4 py-2 shadow-md border border-primary/10">
             {navItems.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="relative text-foreground hover:text-accent transition-all duration-300 font-semibold group animate-slide-in-right"
+                className="relative text-foreground hover:text-accent transition-all duration-300 font-semibold group animate-slide-in-right px-3 py-1 rounded-lg hover:bg-primary/10 hover:shadow-lg focus:ring-2 focus:ring-primary/40 focus:outline-none"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.label}

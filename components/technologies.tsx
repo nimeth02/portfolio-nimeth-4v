@@ -8,45 +8,64 @@ export function Technologies() {
   const [activeCategory, setActiveCategory] = useState<"fullstack" | "aiml">("fullstack")
 
   const fullstackTechnologies = [
-    { name: "React.js", category: "Frontend", level: 90 },
-    { name: "JavaScript", category: "Language", level: 85 },
-    { name: "Next.js", category: "Framework", level: 88 },
-    { name: "TypeScript", category: "Language", level: 82 },
-    { name: "Express.js", category: "Backend", level: 80 },
-    { name: "Node.js", category: "Runtime", level: 83 },
-    { name: "Tailwind CSS", category: "Styling", level: 92 },
-    { name: "MongoDB", category: "Database", level: 78 },
-    { name: "MySQL", category: "Database", level: 76 },
-    { name: "Python", category: "Language", level: 85 },
-    { name: "Flask", category: "Framework", level: 75 },
-    { name: "Git", category: "Version Control", level: 88 },
+    { name: "Node Js"},
+    { name: "ASP.NET Core"},
+    { name: "React js"},
+    { name: "JavaScript" },
+    { name: "Next.js"},
+    { name: "TypeScript" },
+    { name: "Python" },
+    { name: "Flask"},
+    { name: "Fast API"},
+    { name: "MongoDB" },
+    { name: "MySQL" },
+    { name: "Tailwind CSS"},
   ]
 
   const aimlTechnologies = [
-    { name: "Python", category: "Language", level: 90 },
-    { name: "TensorFlow", category: "Framework", level: 85 },
-    { name: "PyTorch", category: "Framework", level: 80 },
-    { name: "Scikit-learn", category: "Library", level: 88 },
-    { name: "Pandas", category: "Data Analysis", level: 92 },
-    { name: "NumPy", category: "Computing", level: 90 },
-    { name: "Matplotlib", category: "Visualization", level: 85 },
-    { name: "Jupyter", category: "Environment", level: 88 },
+    { name: "Python" },
+    { name: "TensorFlow" },
+    { name: "PyTorch" },
+    { name: "Scikit-learn" },
+    { name: "LangChain"},
+    { name: "LangGraph "},
+    { name: "n8n"},
+    { name: "Pandas" },
+    { name: "Matplotlib" },
     { name: "OpenCV", category: "Computer Vision", level: 75 },
-    { name: "NLTK", category: "NLP", level: 70 },
-    { name: "Keras", category: "Deep Learning", level: 82 },
-    { name: "SQL", category: "Database", level: 85 },
+    { name: "Keras" },
+    { name: "Pinecone "},
   ]
 
   const currentTechnologies = activeCategory === "fullstack" ? fullstackTechnologies : aimlTechnologies
 
   const education = [
-    {
-      degree: "B.Sc (Hons) Information Technology",
-      institution: "University of Moratuwa",
-      status: "Current Student & Freelancer",
-      year: "2022 - Present",
-    },
-  ]
+  
+  {
+    degree: "Intern Software Engineer (R&D)",
+    institution: "Creative Software",
+    status: "Internship",
+    year: "Mar 2025 - Sep 2025",
+  },
+  {
+    degree: "Back End Developer",
+    institution: "Techseya",
+    status: "Part-time Role",
+    year: "Sep 2024 - Feb 2025",
+  },
+  {
+    degree: "B.Sc (Hons) Information Technology",
+    institution: "University of Moratuwa",
+    status: "Final year Student",
+    year: "2022 - Present",
+  },
+  {
+    degree: "Physical Science - IT Stream",
+    institution: "Sivali Central College",
+    status: "Z-score: 2.5768",
+    year: "2012 - 2020",
+  },
+];
 
   return (
     <section id="technologies" className="py-16 sm:py-24 relative overflow-hidden">
@@ -72,7 +91,7 @@ export function Technologies() {
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === "fullstack"
                   ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
-                  : "text-foreground/70 hover:text-foreground"
+                  : "bg-gray-200 text-foreground/70 hover:text-foreground"
               }`}
             >
               Full Stack Development
@@ -82,7 +101,7 @@ export function Technologies() {
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === "aiml"
                   ? "bg-gradient-to-r from-secondary to-accent text-white shadow-lg"
-                  : "text-foreground/70 hover:text-foreground"
+                  : "bg-gray-200 text-foreground/70 hover:text-foreground"
               }`}
             >
               AI/ML & Data Science

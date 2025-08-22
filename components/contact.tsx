@@ -2,12 +2,15 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send, MessageCircle, User, AtSign } from "lucide-react"
+import { toast, ToastContainer } from "react-toastify";
+import { Zoom } from "react-toastify";
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -16,10 +19,91 @@ export function Contact() {
     message: "",
   })
 
+  const form = useRef<HTMLFormElement>(null)
+
+  const validateForm = () => {
+    let isValid = true;
+    let errors = "";
+
+    const name = (form.current?.elements.namedItem("name") as HTMLInputElement | null)?.value.trim() || "";
+    const email = (form.current?.elements.namedItem("email") as HTMLInputElement | null)?.value.trim() || "";
+    const message = (form.current?.elements.namedItem("message") as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() || "";
+
+    switch (true) {
+      case !name:
+        errors = 'Name is required';
+        isValid = false;
+        break;
+      case !email:
+        errors = 'Email is required';
+        isValid = false;
+        break;
+      case !/\S+@\S+\.\S+/.test(email):
+        errors = 'Invalid email address';
+        isValid = false;
+        break;
+      case !message:
+        errors = 'Message is required';
+        isValid = false;
+        break;
+      default:
+        break;
+    }
+
+    return { isValid, errors };
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    const { isValid, errors } = validateForm()
+    if (isValid) {
+      emailjs.sendForm('service_n5glj5l', 'template_mdlg3td', form.current!, {
+        publicKey: 'NEc93PyXyw1L4XDLt',
+      }).then(
+        () => {
+          console.log('SUCCESS!');
+          toast.success('Email sent successfully', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Zoom,
+          });
+          form.current?.reset();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          toast.error('Something went wrong', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Zoom,
+          });
+        },
+      );
+    }
+    else {
+      toast.error(errors, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Zoom,
+      });
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,7 +150,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-foreground mb-1">Email</h4>
-                    <p className="text-muted-foreground">nimeth@example.com</p>
+                    <p className="text-muted-foreground">nimeth200110002@gmail.com</p>
                   </div>
                 </div>
 
@@ -76,7 +160,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground">+94 XX XXX XXXX</p>
+                    <p className="text-muted-foreground">+94 706585632</p>
                   </div>
                 </div>
 
@@ -101,7 +185,7 @@ export function Contact() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-8">
                 <div className="relative group">
                   <User className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5 group-focus-within:text-primary transition-colors duration-300" />
                   <Input
@@ -151,6 +235,19 @@ export function Contact() {
             </CardContent>
           </Card>
         </div>
+        <ToastContainer
+                position="bottom-center"
+                autoClose={300}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="colored"
+                  aria-label="Toast notifications"
+            />
       </div>
     </section>
   )
