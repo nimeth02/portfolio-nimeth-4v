@@ -9,7 +9,7 @@ export function Projects() {
       title: "Tea Farming Support Assistant",
       description:
         "AI-powered multi-agent assistant for tea farmers. Includes disease diagnosis via RAG, fertilizer recommendations using weather/land data, and FAQ help service. Integrated LLM-based query routing with LangChain and LangGraph.",
-      image: "/tea-farming-assistant.png",
+      image: "/tea-farming.png",
       technologies: [
         "FastAPI",
         "LangChain",
@@ -38,7 +38,7 @@ export function Projects() {
       title: "Tomato Disease Detector",
       description:
         "AI system for detecting crop diseases from tomato leaf images using computer vision and ML. Integrated TensorFlow models, Matplotlib visualization, FastAPI backend, and React.js frontend for real-time diagnosis.",
-      image: "/tomato-disease-detector.png",
+      image: "/tomato-disease.png",
       technologies: [
         "React.js",
         "FastAPI",
