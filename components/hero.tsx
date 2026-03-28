@@ -40,7 +40,7 @@ export function Hero() {
               <div className="w-64 h-64 sm:w-80 sm:h-80 glass-card rounded-full p-2 animate-pulse-glow">
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 flex items-center justify-center overflow-hidden">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D5603AQHxEUEW5XDuSw/profile-displayphoto-shrink_400_400/B56ZSPV.VzHwAo-/0/1737571693391?e=1758758400&v=beta&t=sRGz974c9neM1WJdyudObiOLsjeSg478Zt9T7wZbHHw"
+                    src="https://media.licdn.com/dms/image/v2/D5603AQHxEUEW5XDuSw/profile-displayphoto-shrink_400_400/B56ZSPV.VzHwAo-/0/1737571693391?e=1776297600&v=beta&t=2vm0B7pgr6M-efP5CbQW1NrKXXgFBez8O5bZf0xc0jY"
                     alt="Nimeth Nimdinu"
                     className="w-60 h-60 sm:w-72 sm:h-72 rounded-full object-cover"
                   />
