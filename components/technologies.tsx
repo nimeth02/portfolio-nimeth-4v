@@ -40,18 +40,17 @@ export function Technologies() {
   const currentTechnologies = activeCategory === "fullstack" ? fullstackTechnologies : aimlTechnologies
 
   const education = [
-  
+     {
+    degree: "Associate Software Engineer",
+    institution: "NovaCodex",
+    status: "Part-time Role",
+    year: "Dec 2025 - Mar 2026",
+  },
   {
     degree: "Intern Software Engineer (R&D)",
     institution: "Creative Software",
     status: "Internship",
     year: "Mar 2025 - Sep 2025",
-  },
-  {
-    degree: "Back End Developer",
-    institution: "Techseya",
-    status: "Part-time Role",
-    year: "Sep 2024 - Feb 2025",
   },
   {
     degree: "B.Sc (Hons) Information Technology",
