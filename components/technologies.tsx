@@ -44,7 +44,7 @@ export function Technologies() {
     degree: "Associate Software Engineer",
     institution: "NovaCodex",
     status: "Part-time Role",
-    year: "Dec 2025 - Mar 2026",
+    year: "Dec 2025 - Present",
   },
   {
     degree: "Intern Software Engineer (R&D)",

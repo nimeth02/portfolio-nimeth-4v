@@ -62,7 +62,7 @@ export function Hero() {
               </h1>
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
                 <span className="glass-card px-4 py-2 rounded-full text-sm font-semibold text-primary">
-                  Intern Software Engineer
+                   Software Engineer
                 </span>
                 <span className="glass-card px-4 py-2 rounded-full text-sm font-semibold text-secondary">
                   AI Enthusiest
@@ -75,7 +75,7 @@ export function Hero() {
                 I  am a final year undergraduate student at the Faculty of Information
                 Technology, University of Moratuwa, specializing in machine learning and
                 artificial intelligence. I am on the verge of completing my internship and
-                am now seeking an Associate AI Engineer role to apply my full-stack and
+                am now seeking a Software Engineer role to apply my full-stack and
                 AI skills to solve complex challenges and contribute to innovative IT
                 solutions.
               </p>
